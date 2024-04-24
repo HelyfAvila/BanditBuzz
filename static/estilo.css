@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #120907; 
+    margin: 0;
+    padding: 0;
+   /* 
+    background-image: url('/static/animal-2028258_1280.webp');
+    background-repeat: repeat;
+    background-size: 120px 120px; 
+   */
+}
+
+table {
+    width: 80%;
+    margin: 50px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px; /* Espaçamento interno das células */
+    text-align: left;
+    width: calc(100% / 3); /* Distribui igualmente a largura das células */
+}
+
+th {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+tr.blue-row th { /* Estiliza os cabeçalhos da primeira linha */
+    background-color: #007BFF;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Cor de fundo para linhas pares */
+}
+
+tr:hover {
+    background-color: #ddd; /* Cor de fundo ao passar o mouse sobre a linha */
+}
+
+.table-container {
+    width: 80%;
+    margin: 50px auto;
+}

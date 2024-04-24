@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% block conteudo %}
+<link rel="stylesheet" href="/static/estilo.css">
+<div class="container">
+    <div class="table-container">
+        
+        <table>
+            <h1>Usuários Cadastrados:</h1>
+            <tr class="blue-row">
+                <th>Nome:</th>
+                <th>CPF:</th>
+                <th>E-mail:</th>
+                <th>ID:</th>
+                <th>Excluir</th>
+                <th>Alterar</th>
+            </tr>
+            {% for usuario in usuarios %}
+                <tr>
+                    <td>{{usuario[0] }}</td>
+                    <td>{{usuario[1] }}</td>
+                    <td>{% if usuario[2] is not none %}
+                            {{usuario[2] }}
+                        {% else %}
+                            Vazio
+                        {%endif%}        
+                    </td>
+                    <td>{{usuario[3]}}</td>
+                    <td></td>
+                    <td>
+                        <a href= {{ url_for("alterar_usuario", user=usuario[3]) }}>Alterar</a>
+                    </td>
+                </tr>
+               
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}
