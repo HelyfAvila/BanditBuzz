@@ -1,31 +1,37 @@
-{% extends 'index.html' %}
+{% extends 'cadastro.html' %}
 {% block conteudo %}
 <link rel="stylesheet" href="/static/estilo.css">
 
-<table>
-    <h1>Usuários Cadastrados:</h1>
-    <tr class="blue-row">
-        <th>Nome:</th>
-        <th>CPF:</th>
-        <th>E-mail:</th>
-        <th>ID:</th>
-        <th>Excluir</th>
-        <th>Alterar</th>
-    </tr>
-    {% for usuario in usuarios %}
-        <tr>
-            <td>{{usuario[0] }}</td>
-            <td>{{usuario[1] }}</td>
-            <td>{% if usuario[2] is not none %}
-                    {{usuario[2] }}
-                {% else %}
-                    Vazio
-                {%endif%}        
-            </td>
-            <td>{{ usuario[3] }}</td>
-            <td></td>
-            <td></td>
-        </tr>
-    {% endfor %}
-</table>
+<div class="container">
+    <!--{% if opcao == "alterar" %}-->
+        {% for user in usuarios %}
+        <form action="/update_usuario" method="POST" class="inner-container"> <!--/media-notas" method="POST"-->
+            <h2>Cadastro de Usuários</h2>
+            <label for="nome">Nome:</label><br>
+            <input type="text" id="txt_nome" name="txt_nome" value= "{{ user[0] }}"><br><br>
+    
+            <label for="cpf">CPF:</label><br>
+            <input type="text" id="txt_cpf" name="txt_cpf" value= {{ user [1] }}><br><br>
+    
+            <label for="email">Email:</label><br>
+            <input type="email" id="txt_email" name="txt_email" value= {{ user [2] }}><br><br>
+
+
+            <input type="text" id="txt_id" placeholder="ID:" name="txt_id" hidden="false"  value = {{ user [3] }} ><br><br>
+
+    
+            <label for="senha">Senha:</label><br>
+            <input type="password" id="txt_senha" name="txt_senha"><br><br>
+    
+
+            <input type="submit" value="Salvar Alteração">
+            
+            
+            <div class="teste">
+                <a href="/consultar" class="botao">Consultar Usuários</a>
+            </div>
+        </form>
+        {% endfor %}
+    <!--{% endif %}    -->
+</div>
 {% endblock %}

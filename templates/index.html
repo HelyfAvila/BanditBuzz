@@ -1,47 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Usuário</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/clientes.css">
+
 </head>
+
 <body>
-    {% block conteudo %}
     <div class="container">
-        <form action="/cadastrar_usuario" method="POST" class="inner-container"> <!--/media-notas" method="POST"-->
-            <h2>Cadastro de Usuários</h2>
-            <label for="nome">Nome:</label><br>
-            <input type="text" id="txt_nome" name="txt_nome" required><br><br>
-    
-            <label for="cpf">CPF:</label><br>
-            <input type="text" id="txt_cpf" name="txt_cpf" required><br><br>
-    
-            <label for="email">Email:</label><br>
-            <input type="email" id="txt_email" name="txt_email" ><br><br>
-    
-            <label for="senha">Senha:</label><br>
-            <input type="password" id="txt_senha" name="txt_senha" required><br><br>
-    
-            <input type="submit" value="Registrar">
-
-            <div class="teste">
-                <a href="/consultar" class="botao">Consultar Usuários</a>
-            </div>
-
-
-        </form>
-
-        
+        <h1 class="title">Bem vindo! Selecione a opção desejada!</h1>
+        <!-- <a href= ><a/> -->
+    </div>
+    <div class="link">
+        <a href={{ url_for("cadastro") }} class="button">Cadastro de Usuários</a>
+        <a href={{ url_for("clientes") }} class="button"> Cadastro de Clientes</a>
 
     </div>
-
     <div class="div-footer">
         <footer class="footer">
             <!-- Conteúdo do rodapé -->
             <p>&copy;Helyf Avila</p>
         </footer>
     </div>
-    {% endblock %}
 </body>
+
 </html>

@@ -1,4 +1,4 @@
-{% extends 'index.html' %}
+{% extends 'cadastro.html' %}
 {% block conteudo %}
 <link rel="stylesheet" href="/static/estilo.css">
 <div class="container">
@@ -25,7 +25,9 @@
                         {%endif%}        
                     </td>
                     <td>{{usuario[3]}}</td>
-                    <td></td>
+                    <td>
+                        <a href= {{ url_for("delete_usuario", user=usuario[3]) }}>Excluir</a>
+                    </td>
                     <td>
                         <a href= {{ url_for("alterar_usuario", user=usuario[3]) }}>Alterar</a>
                     </td>
@@ -33,6 +35,11 @@
                
             {% endfor %}
         </table>
+        <div class="return">
+            <a class="bottom-return" href= {{ url_for("cadastro")}}>Voltar</a>
+
+        </div>
+        
     </div>
 </div>
 {% endblock %}

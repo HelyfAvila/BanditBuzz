@@ -47,3 +47,26 @@ tr:hover {
     width: 80%;
     margin: 50px auto;
 }
+
+.return {
+    background-color: #007BFF;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    display: flex; /* Torna .return um container flex */
+    justify-content: center; /* Centraliza o conteúdo dentro de .return */
+    padding: 10px; /* Ajuste o padding conforme necessário */
+    width: 100px; 
+    margin: 0 auto; 
+    
+
+  }
+.bottom-return{
+    text-decoration: none;
+    color: #fff;
+
+}
+
+.return:hover {
+    background-color: #0056B3;
+}
